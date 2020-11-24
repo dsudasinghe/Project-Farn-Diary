@@ -1,4 +1,4 @@
-# Project-Farn-Diary
+# Project-Farm-Diary
 PUSL2002 Web Development Project
 
 # scenario of the project-
