@@ -31,7 +31,14 @@ $con = mysqli_connect("$servername", "$susername","$spassword", "$sdbname");
 if (!$con) {
   die("Connection failed: " . mysqli_connect_error());
 }
+else
+{
+  echo "connected";
+
+}
 ?>
+
+
 
 
 
@@ -51,11 +58,100 @@ if (!$con) {
 
 
 
-
-
-
 <div class="row">
-  <div class="col-sm-4">.col-sm-4 need to fill with cards</div>
+  <div class="col-sm-4">
+
+
+
+
+
+
+<div class="container">
+<div class="row">
+
+
+ <?php
+
+$sql = "SELECT * FROM `product`";
+$result = mysqli_query($con, $sql);
+
+if (mysqli_num_rows($result) > 0)
+ {
+  // output data of each row
+  while($row = mysqli_fetch_assoc($result))
+   {
+    ?>
+  <div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="uploads\test.png" alt="Card image cap">
+  <div class="card-body">
+  <?php
+      echo $row["pid"];
+      echo $row["type"];
+      echo $row["description"];
+      echo $row["latitude"];
+      echo $row["longitude"];
+      echo $row["datetime"];
+      echo $row["senderid"];
+      echo $row["price"];
+      echo $row["image"];
+      
+      ?>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+  <?php
+
+     echo "detected";?>
+
+
+
+
+</div>
+
+
+<br>
+
+<?php
+
+
+
+    }} ?>
+
+  
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
   <div class="col-sm-8">
 
 
@@ -64,7 +160,7 @@ if (!$con) {
 <div>
 
 
-<div id="googleMap" style="width:100%;height:400px;"></div>
+<div id="googleMap" style="width:100%;height:800px;"></div>
 
 <script>
 function myMap() {
