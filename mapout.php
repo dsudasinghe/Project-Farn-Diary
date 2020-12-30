@@ -38,6 +38,184 @@
 
 
 <div class="row">
+
+
+
+<div class="container-fluid">
+  
+
+
+
+
+
+
+<div>
+
+
+<div id="googleMap" style="width:100%;height:800px;"></div>
+
+<script>
+function myMap() {
+var mapProp= {
+  center:new google.maps.LatLng(7.0840,80.0098),
+  zoom:15,
+};
+var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+
+
+
+
+<?php
+
+$sql = "SELECT * FROM `product`";
+$result = mysqli_query($con, $sql);
+
+?>
+
+var markerinfo = [
+        <?php if($result->num_rows > 0){ 
+            while($row = $result->fetch_assoc()){ 
+                echo '["'.$row['pid'].'", '.$row['latitude'].', '.$row['longitude'].', "'.$row['price'].'"],'; 
+            } 
+        } 
+        ?>
+    ];
+
+
+
+
+  for( i = 0; i < markerinfo.length; i++ ) {
+        
+        var pp = new google.maps.LatLng(markerinfo[i][1], markerinfo[i][2]);
+        var marker2 = new google.maps.Marker({position:pp,animation:google.maps.Animation.BOUNCE});
+			  marker2.setMap(map);
+        var infowindow = new google.maps.InfoWindow({
+        content:" test" + markerinfo[i][1] 
+        
+        });
+
+        infowindow.open(map,marker2);
+
+
+}        
+
+
+
+        }
+
+
+
+
+
+
+function myFunction(p1, p2) {
+
+
+
+
+
+
+
+
+
+  return p1 * p2;   // The function returns the product of p1 and p2
+}
+
+
+
+
+
+function bigImg(x) {
+  x.style.height = "64px";
+  x.style.width = "64px";
+}
+
+function normalImg(x) {
+  x.style.height = "32px";
+  x.style.width = "32px";
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBheNEtrngM3cbowGS3tLPwoBXlswmmSb0&callback=myMap"></script>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   <div class="col-sm-4">
 
 
@@ -61,7 +239,7 @@ if (mysqli_num_rows($result) > 0)
    {
     ?>
   <div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="uploads\test.png" alt="Card image cap">
+  <img class="card-img-top" src="uploads\test.jpg" alt="Card image cap">
   <div class="card-body">
   <?php
       echo $row["pid"];
@@ -104,90 +282,8 @@ if (mysqli_num_rows($result) > 0)
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   </div>
   <div class="col-sm-8">
-
-
-
-
-<div>
-
-
-<div id="googleMap" style="width:100%;height:800px;"></div>
-
-<script>
-function myMap() {
-var mapProp= {
-  center:new google.maps.LatLng(7.0840,80.0098),
-  zoom:5,
-};
-var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
-
-
-var mycenter = new google.maps.LatLng(7.0840,80.0098);
-
-
-var marker = new google.maps.Marker({position:mycenter,animation:google.maps.Animation.BOUNCE});
-
-
-marker.setMap(map);
-
-var infowindow = new google.maps.InfoWindow({
-  content:"test "
-});
-
-infowindow.open(map,marker);
-
-
-}
-
-
-</script>
-
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBheNEtrngM3cbowGS3tLPwoBXlswmmSb0&callback=myMap"></script>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-  </div>
-
 
 
 
