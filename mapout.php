@@ -4,9 +4,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="css/sty1.css" rel="stylesheet" type="text/css" >
+
+<link href="css/mapoutstyles.css" rel="stylesheet" type="text/css" >
 <!-- bootstrap -->
 <link rel="stylesheet" href="bootstrap-4.1.3-dist/css/bootstrap.min.css">
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 <!-- added styles from home page -->
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="css/fixed.css">
@@ -25,7 +27,7 @@
 
 
 
-<h1>welcome to keels</h1>
+<h1 class=wed>welcome to keels</h1>
 
 
 
@@ -73,10 +75,15 @@ $result = mysqli_query($con, $sql);
 
 ?>
 
+
+
+
+
+
 var markerinfo = [
         <?php if($result->num_rows > 0){ 
             while($row = $result->fetch_assoc()){ 
-                echo '["'.$row['pid'].'", '.$row['latitude'].', '.$row['longitude'].', "'.$row['price'].'"],'; 
+                echo '["'.$row['pid'].'", '.$row['latitude'].', '.$row['longitude'].', "'.$row['price'].'", "'.$row['image'].'", "'.$row['datetime'].'"],'; 
             } 
         } 
         ?>
@@ -88,13 +95,24 @@ var markerinfo = [
   for( i = 0; i < markerinfo.length; i++ ) {
         
         var pp = new google.maps.LatLng(markerinfo[i][1], markerinfo[i][2]);
-        var marker2 = new google.maps.Marker({position:pp,animation:google.maps.Animation.BOUNCE});
+        var marker2 = new google.maps.Marker({position:pp,icon:'images/markerico3.png',animation:google.maps.Animation.BOUNCE});
 			  marker2.setMap(map);
+        var path = "uploads/";
+        var imagename = markerinfo[i][4];
+        var disname = path.concat(imagename);
         var infowindow = new google.maps.InfoWindow({
-        content:" test" + markerinfo[i][1] 
-        
+        content:'<div class=infow><img src="'+disname+'" width="100" height="100"> ' + markerinfo[i][1]+"<br>price per Kg-"+ markerinfo[i][3]+"</div> <button type='button' class='btn btn-outline-success'    data-bs-toggle='collapse' data-bs-target='#collapseExample' aria-expanded='false' aria-controls='collapseExample'                       >more</button>"
+        });
+        //infoWindow.setContent(html);
+       /* infowindow2 = new google.maps.InfoWindow({
+       content:"",
         });
 
+
+
+        marker2.addListener("click", () => {
+        infowindow2.open(map, marker);
+        });*/
         infowindow.open(map,marker2);
 
 
@@ -160,19 +178,23 @@ function normalImg(x) {
 
 
 
+</div>
 
 
 
 
+<div class="collapse" id="collapseExample">
+  <div class="card card-body">
 
 
-
+  <form action="/action_page.php">
+  <label for="fname">type your message:</label><br>
+  <input type="text" id="message" name="fname" value="msg"><br>
+  <input type="submit" value="Submit">
+  </form>
+  At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.
   </div>
-
-
-
-
-
+</div>
 
 
 
@@ -194,29 +216,7 @@ function normalImg(x) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <div class="col-sm-4">
+  <div class="container-fluid">
 
 
 
