@@ -30,7 +30,6 @@
 <h1 class=wed>welcome to keels</h1>
 
 
-
 <?php
       echo "test"; ?>
 
@@ -43,7 +42,7 @@
 
 
 
-<div class="container-fluid">
+<div class="col-sm-8">
   
 
 
@@ -83,7 +82,7 @@ $result = mysqli_query($con, $sql);
 var markerinfo = [
         <?php if($result->num_rows > 0){ 
             while($row = $result->fetch_assoc()){ 
-                echo '["'.$row['pid'].'", '.$row['latitude'].', '.$row['longitude'].', "'.$row['price'].'", "'.$row['image'].'", "'.$row['datetime'].'"],'; 
+                echo '["'.$row['pid'].'", '.$row['latitude'].', '.$row['longitude'].', "'.$row['price'].'", "'.$row['image'].'", "'.$row['description'].'", "'.$row['datetime'].'"],'; 
             } 
         } 
         ?>
@@ -100,8 +99,9 @@ var markerinfo = [
         var path = "uploads/";
         var imagename = markerinfo[i][4];
         var disname = path.concat(imagename);
+        var descr = markerinfo[i][5];
         var infowindow = new google.maps.InfoWindow({
-        content:'<div class=infow><img src="'+disname+'" width="100" height="100"> ' + markerinfo[i][1]+"<br>price per Kg-"+ markerinfo[i][3]+"</div> <button type='button' class='btn btn-outline-success'    data-bs-toggle='collapse' data-bs-target='#collapseExample' aria-expanded='false' aria-controls='collapseExample'                       >more</button>"
+        content:'<div class=infow><img src="'+disname+'" width="100" height="100"> ' + markerinfo[i][1]+"<br>price per Kg-"+ markerinfo[i][3]+"</div> <button type='button' class='btn btn-outline-success'    data-bs-toggle='collapse' data-bs-target='#collapseExample' aria-expanded='false' aria-controls='collapseExample'  onclick='createcontentcollapse("+markerinfo[i][0]+")'                     >more</button>"
         });
         //infoWindow.setContent(html);
        /* infowindow2 = new google.maps.InfoWindow({
@@ -124,49 +124,6 @@ var markerinfo = [
 
 
 
-
-
-
-function myFunction(p1, p2) {
-
-
-
-
-
-
-
-
-
-  return p1 * p2;   // The function returns the product of p1 and p2
-}
-
-
-
-
-
-function bigImg(x) {
-  x.style.height = "64px";
-  x.style.width = "64px";
-}
-
-function normalImg(x) {
-  x.style.height = "32px";
-  x.style.width = "32px";
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </script>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBheNEtrngM3cbowGS3tLPwoBXlswmmSb0&callback=myMap"></script>
@@ -183,55 +140,31 @@ function normalImg(x) {
 
 
 
+
 <div class="collapse" id="collapseExample">
-  <div class="card card-body">
-
-
-  <form action="/action_page.php">
-  <label for="fname">type your message:</label><br>
-  <input type="text" id="message" name="fname" value="msg"><br>
-  <input type="submit" value="Submit">
-  </form>
-  At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.
-  </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
-
-
-
-
-
-
-
-
-  <div class="container-fluid">
-
-
-
-
+  <div class="card card-body">  
+<label id="demo1"></label>
 
 
 <div class="container">
 <div class="row">
+<script>
 
+
+function createcontentcollapse(productid) {
+
+alert(productid);
+var xx = productid;
+document.getElementById("demo1").innerHTML = productid;
+document.cookie = "myJavascriptVar = " + productid; 
+}
+</script>
 
  <?php
-
-$sql = "SELECT * FROM `product`";
+  $myPhpVar= $_COOKIE['myJavascriptVar'];
+$sql = "SELECT * FROM `product` where pid='$myPhpVar'";
 $result = mysqli_query($con, $sql);
-
+//setcookie("myJavascriptVar","");
 if (mysqli_num_rows($result) > 0)
  {
   // output data of each row
@@ -239,8 +172,9 @@ if (mysqli_num_rows($result) > 0)
    {
     ?>
   <div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="uploads\test.jpg" alt="Card image cap">
+  <img class="card-img-top" src="uploads\<?php echo $row['image']; ?>" alt="Card image cap">
   <div class="card-body">
+   <h1><?php echo $row['type']; ?></h1> 
   <?php
       echo $row["pid"];
       echo $row["type"];
@@ -251,14 +185,16 @@ if (mysqli_num_rows($result) > 0)
       echo $row["senderid"];
       echo $row["price"];
       echo $row["image"];
-      
+     
       ?>
+    <h1 class=cardprice><?php echo $row['price']; ?></h1> 
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
   </div>
   <?php
 
-     echo "detected";?>
-
+     echo "detected";
+      
+      ?>
 
 
 
@@ -282,6 +218,56 @@ if (mysqli_num_rows($result) > 0)
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+<!--
+
+  <div class="container-fluid">
+
+
+
+
+
+
+
+
+
+  -->
+
+
   </div>
   <div class="col-sm-8">
 
@@ -299,7 +285,6 @@ mysqli_close($con);
 
 
 ?>
-
 
 
 </body>
