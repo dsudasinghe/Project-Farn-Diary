@@ -9,9 +9,5 @@ $con = mysqli_connect("$servername", "$susername","$spassword", "$sdbname");
 if (!$con) {
   die("Connection failed: " . mysqli_connect_error());
 }
-else
-{
-  echo "connected";
 
-}
 ?>

@@ -27,33 +27,24 @@
 
 
 
-<h1 class=wed>welcome to keels</h1>
+<h1 class=wed style=" height: 50%;
+    margin-top: 20%;
+    margin-bottom: 20%;">welcome to keels</h1>
 
 
-<?php
-      echo "test"; ?>
-
-
-
-
-
-
-<div class="row">
+<div class="row" style="
+    background-color: seagreen;
+">
 
 
 
-<div class="col-sm-8">
+<div class="container-fluid">
   
-
-
-
-
-
 
 <div>
 
 
-<div id="googleMap" style="width:100%;height:800px;"></div>
+<div id="googleMap" style="width:100%;height:1200px;"></div>
 
 <script>
 function myMap() {
@@ -101,7 +92,7 @@ var markerinfo = [
         var disname = path.concat(imagename);
         var descr = markerinfo[i][5];
         var infowindow = new google.maps.InfoWindow({
-        content:'<div class=infow><img src="'+disname+'" width="100" height="100"> ' + markerinfo[i][1]+"<br>price per Kg-"+ markerinfo[i][3]+"</div> <button type='button' class='btn btn-outline-success'    data-bs-toggle='collapse' data-bs-target='#collapseExample' aria-expanded='false' aria-controls='collapseExample'  onclick='createcontentcollapse("+markerinfo[i][0]+")'                     >more</button>"
+        content:'<div class=infow><img src="'+disname+'" width="100" height="100"> </br>' + markerinfo[i][0]+"<br>price per Kg-"+ markerinfo[i][3]+"</div> <button type='button' class='btn btn-outline-success'    data-bs-toggle='collapse' data-bs-target='#collapseExample' aria-expanded='false' aria-controls='collapseExample'  onclick='createcontentcollapse("+markerinfo[i][0]+")'                     >more</button>"
         });
         //infoWindow.setContent(html);
        /* infowindow2 = new google.maps.InfoWindow({
@@ -140,11 +131,15 @@ var markerinfo = [
 
 
 
-
-<div class="collapse" id="collapseExample">
+<div class="container">
+   
+   
+  <div class="container" style="  animation: 3s ease-out 0s 1 slideInFromLeft; border-radius: 25px;
+    background: #FFFFFF;     margin-top: 10%; margin-bottom: 10%;" >
+  
+  <form action="/action_page.php"  >
   <div class="card card-body">  
 <label id="demo1"></label>
-
 
 <div class="container">
 <div class="row">
@@ -153,16 +148,24 @@ var markerinfo = [
 
 function createcontentcollapse(productid) {
 
-alert(productid);
-var xx = productid;
-document.getElementById("demo1").innerHTML = productid;
-document.cookie = "myJavascriptVar = " + productid; 
+//alert(productid);
+var productidvar = productid;
+//document.getElementById("demo1").innerHTML = productid;
+document.cookie = "myJavascriptVar=" + productidvar; 
+window.location.reload();
 }
 </script>
 
  <?php
-  $myPhpVar= $_COOKIE['myJavascriptVar'];
-$sql = "SELECT * FROM `product` where pid='$myPhpVar'";
+$myPhpVar= $_COOKIE['myJavascriptVar'];
+
+//setting default
+if(is_null($myPhpVar)==1)
+{$myPhpVar=1;
+}
+
+
+$sql = "SELECT * FROM `product` where pid=$myPhpVar";
 $result = mysqli_query($con, $sql);
 //setcookie("myJavascriptVar","");
 if (mysqli_num_rows($result) > 0)
@@ -171,31 +174,27 @@ if (mysqli_num_rows($result) > 0)
   while($row = mysqli_fetch_assoc($result))
    {
     ?>
-  <div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="uploads\<?php echo $row['image']; ?>" alt="Card image cap">
+  <div class="card" style="width:auto;">
+  <img class="card-img-top" style="width: 40%;" src="uploads\<?php echo $row['image']; ?>" alt="Card image cap">
   <div class="card-body">
-   <h1><?php echo $row['type']; ?></h1> 
+
+   <h1><?php 
+   
+   
+   if($row['type']==1){
+    echo "fruit";
+   }
+   
+   
+    ?></h1> 
   <?php
-      echo $row["pid"];
-      echo $row["type"];
-      echo $row["description"];
-      echo $row["latitude"];
-      echo $row["longitude"];
       echo $row["datetime"];
       echo $row["senderid"];
       echo $row["price"];
-      echo $row["image"];
-     
       ?>
-    <h1 class=cardprice><?php echo $row['price']; ?></h1> 
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <h1 class=cardprice>price  1Kg <?php echo +$row['price']; ?>  lkr</h1> 
+    <p class="card-text"><?php echo $row['description']; ?></p>
   </div>
-  <?php
-
-     echo "detected";
-      
-      ?>
-
 
 
 </div>
@@ -207,75 +206,68 @@ if (mysqli_num_rows($result) > 0)
 
 
 
+
+$senderrr=$row["senderid"];
+
+
+
+
+
+
+
+
     }} ?>
 
-  
+<?php
+
+
+
+
+
+?>
   </div>
 </div>
 
 
+   <?php
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
-
-
-
-
-
-
-<!--
-
-  <div class="container-fluid">
-
-
-
-
-
-
-
-
-
-  -->
-
-
+$sql2 = "SELECT * FROM `farmer` where fid=$senderrr";
+$result2 = mysqli_query($con, $sql2);
+//setcookie("myJavascriptVar","");
+if (mysqli_num_rows($result2) > 0)
+ {
+  // output data of each row
+  while($row = mysqli_fetch_assoc($result2))
+   {
+    ?>
+  <div>
+  <h1>
+  <?php
+      echo $row["fcontact"]; ?>&nbsp;
+   <?php   echo $row["femail"]; ?> &nbsp;
+     <?php echo $row["ffirstname"]; ?>&nbsp;
+     
+    </h1>
   </div>
-  <div class="col-sm-8">
+</div>
 
+<?php
 
+}} ?>
+<br>
 
+ 
+   <label for="lname">message:</label><br>
+  <input type="text" id="lname" name="lname" value="enter your message here"><br><br>
+  <input type="submit" value="send">
+  </form>
 
 
 </div>
+
+
+
+
 
 
 <?php
@@ -285,6 +277,15 @@ mysqli_close($con);
 
 
 ?>
+
+
+
+
+
+  </div>
+  </div>
+  </div>
+<div class="div-1" style="background-color: black;  height: 300px;"> I love HTML </br> I love HTML</br> I love HTML
 
 
 </body>
