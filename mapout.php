@@ -3,15 +3,13 @@
 <head>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link href="css/sty1.css" rel="stylesheet" type="text/css" >
 
 <link href="css/mapoutstyles.css" rel="stylesheet" type="text/css" >
 <!-- bootstrap -->
 <link rel="stylesheet" href="bootstrap-4.1.3-dist/css/bootstrap.min.css">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 <!-- added styles from home page -->
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="css/fixed.css">
+
 <link href="fontawesome-free-5.12.0-web/css/all.css" rel="stylesheet">
 <link rel="shortcut icon" href="img/icon.png" />
 
@@ -138,7 +136,8 @@ var markerinfo = [
     background: #FFFFFF;     margin-top: 10%; margin-bottom: 10%;" >
   
   <form action="/action_page.php"  >
-  <div class="card card-body">  
+  <div class="card card-body" style="
+    border: white;">  
 <label id="demo1"></label>
 
 <div class="container">
@@ -174,7 +173,7 @@ if (mysqli_num_rows($result) > 0)
   while($row = mysqli_fetch_assoc($result))
    {
     ?>
-  <div class="card" style="width:auto;">
+  <div class="card" style="width:auto; border: white;">
   <img class="card-img-top" style="width: 40%;" src="uploads\<?php echo $row['image']; ?>" alt="Card image cap">
   <div class="card-body">
 
@@ -249,6 +248,9 @@ if (mysqli_num_rows($result2) > 0)
      
     </h1>
   </div>
+  <label for="lname">message:</label><br>
+  <input type="text" id="lname" name="lname" value="enter your message here"><br><br>
+  <input type="submit" value="send">
 </div>
 
 <?php
@@ -257,9 +259,6 @@ if (mysqli_num_rows($result2) > 0)
 <br>
 
  
-   <label for="lname">message:</label><br>
-  <input type="text" id="lname" name="lname" value="enter your message here"><br><br>
-  <input type="submit" value="send">
   </form>
 
 
