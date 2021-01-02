@@ -3,15 +3,13 @@
 <head>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link href="css/sty1.css" rel="stylesheet" type="text/css" >
 
 <link href="css/mapoutstyles.css" rel="stylesheet" type="text/css" >
 <!-- bootstrap -->
 <link rel="stylesheet" href="bootstrap-4.1.3-dist/css/bootstrap.min.css">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 <!-- added styles from home page -->
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="css/fixed.css">
+
 <link href="fontawesome-free-5.12.0-web/css/all.css" rel="stylesheet">
 <link rel="shortcut icon" href="img/icon.png" />
 
@@ -27,34 +25,24 @@
 
 
 
-<h1 class=wed>welcome to keels</h1>
+<h1 class=wed style=" height: 50%;
+    margin-top: 20%;
+    margin-bottom: 20%;">welcome to keels</h1>
 
 
-
-<?php
-      echo "test"; ?>
-
-
-
-
-
-
-<div class="row">
+<div class="row" style="
+    background-color: seagreen;
+">
 
 
 
 <div class="container-fluid">
   
 
-
-
-
-
-
 <div>
 
 
-<div id="googleMap" style="width:100%;height:800px;"></div>
+<div id="googleMap" style="width:100%;height:1200px;"></div>
 
 <script>
 function myMap() {
@@ -83,7 +71,7 @@ $result = mysqli_query($con, $sql);
 var markerinfo = [
         <?php if($result->num_rows > 0){ 
             while($row = $result->fetch_assoc()){ 
-                echo '["'.$row['pid'].'", '.$row['latitude'].', '.$row['longitude'].', "'.$row['price'].'", "'.$row['image'].'", "'.$row['datetime'].'"],'; 
+                echo '["'.$row['pid'].'", '.$row['latitude'].', '.$row['longitude'].', "'.$row['price'].'", "'.$row['image'].'", "'.$row['description'].'", "'.$row['datetime'].'"],'; 
             } 
         } 
         ?>
@@ -100,8 +88,9 @@ var markerinfo = [
         var path = "uploads/";
         var imagename = markerinfo[i][4];
         var disname = path.concat(imagename);
+        var descr = markerinfo[i][5];
         var infowindow = new google.maps.InfoWindow({
-        content:'<div class=infow><img src="'+disname+'" width="100" height="100"> ' + markerinfo[i][1]+"<br>price per Kg-"+ markerinfo[i][3]+"</div> <button type='button' class='btn btn-outline-success'    data-bs-toggle='collapse' data-bs-target='#collapseExample' aria-expanded='false' aria-controls='collapseExample'                       >more</button>"
+        content:'<div class=infow><img src="'+disname+'" width="100" height="100"> </br>' + markerinfo[i][0]+"<br>price per Kg-"+ markerinfo[i][3]+"</div> <button type='button' class='btn btn-outline-success'    data-bs-toggle='collapse' data-bs-target='#collapseExample' aria-expanded='false' aria-controls='collapseExample'  onclick='createcontentcollapse("+markerinfo[i][0]+")'                     >more</button>"
         });
         //infoWindow.setContent(html);
        /* infowindow2 = new google.maps.InfoWindow({
@@ -124,49 +113,6 @@ var markerinfo = [
 
 
 
-
-
-
-function myFunction(p1, p2) {
-
-
-
-
-
-
-
-
-
-  return p1 * p2;   // The function returns the product of p1 and p2
-}
-
-
-
-
-
-function bigImg(x) {
-  x.style.height = "64px";
-  x.style.width = "64px";
-}
-
-function normalImg(x) {
-  x.style.height = "32px";
-  x.style.width = "32px";
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </script>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBheNEtrngM3cbowGS3tLPwoBXlswmmSb0&callback=myMap"></script>
@@ -183,83 +129,71 @@ function normalImg(x) {
 
 
 
-<div class="collapse" id="collapseExample">
-  <div class="card card-body">
-
-
-  <form action="/action_page.php">
-  <label for="fname">type your message:</label><br>
-  <input type="text" id="message" name="fname" value="msg"><br>
-  <input type="submit" value="Submit">
-  </form>
-  At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.
-  </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
-
-
-
-
-
-
-
-
-  <div class="container-fluid">
-
-
-
-
-
+<div class="container">
+   
+   
+  <div class="container" style="  animation: 3s ease-out 0s 1 slideInFromLeft; border-radius: 25px;
+    background: #FFFFFF;     margin-top: 10%; margin-bottom: 10%;" >
+  
+  <form action="/action_page.php"  >
+  <div class="card card-body" style="
+    border: white;">  
+<label id="demo1"></label>
 
 <div class="container">
 <div class="row">
+<script>
 
+
+function createcontentcollapse(productid) {
+
+//alert(productid);
+var productidvar = productid;
+//document.getElementById("demo1").innerHTML = productid;
+document.cookie = "myJavascriptVar=" + productidvar; 
+window.location.reload();
+}
+</script>
 
  <?php
+$myPhpVar= $_COOKIE['myJavascriptVar'];
 
-$sql = "SELECT * FROM `product`";
+//setting default
+if(is_null($myPhpVar)==1)
+{$myPhpVar=1;
+}
+
+
+$sql = "SELECT * FROM `product` where pid=$myPhpVar";
 $result = mysqli_query($con, $sql);
-
+//setcookie("myJavascriptVar","");
 if (mysqli_num_rows($result) > 0)
  {
   // output data of each row
   while($row = mysqli_fetch_assoc($result))
    {
     ?>
-  <div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="uploads\test.jpg" alt="Card image cap">
+  <div class="card" style="width:auto; border: white;">
+  <img class="card-img-top" style="width: 40%;" src="uploads\<?php echo $row['image']; ?>" alt="Card image cap">
   <div class="card-body">
+
+   <h1><?php 
+   
+   
+   if($row['type']==1){
+    echo "fruit";
+   }
+   
+   
+    ?></h1> 
   <?php
-      echo $row["pid"];
-      echo $row["type"];
-      echo $row["description"];
-      echo $row["latitude"];
-      echo $row["longitude"];
       echo $row["datetime"];
       echo $row["senderid"];
       echo $row["price"];
-      echo $row["image"];
-      
       ?>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <h1 class=cardprice>price  1Kg <?php echo +$row['price']; ?>  lkr</h1> 
+    <p class="card-text"><?php echo $row['description']; ?></p>
   </div>
-  <?php
-
-     echo "detected";?>
-
-
 
 
 </div>
@@ -271,25 +205,68 @@ if (mysqli_num_rows($result) > 0)
 
 
 
+
+$senderrr=$row["senderid"];
+
+
+
+
+
+
+
+
     }} ?>
 
-  
+<?php
+
+
+
+
+
+?>
   </div>
+</div>
+
+
+   <?php
+
+$sql2 = "SELECT * FROM `farmer` where fid=$senderrr";
+$result2 = mysqli_query($con, $sql2);
+//setcookie("myJavascriptVar","");
+if (mysqli_num_rows($result2) > 0)
+ {
+  // output data of each row
+  while($row = mysqli_fetch_assoc($result2))
+   {
+    ?>
+  <div>
+  <h1>
+  <?php
+      echo $row["fcontact"]; ?>&nbsp;
+   <?php   echo $row["femail"]; ?> &nbsp;
+     <?php echo $row["ffirstname"]; ?>&nbsp;
+     
+    </h1>
+  </div>
+  <label for="lname">message:</label><br>
+  <input type="text" id="lname" name="lname" value="enter your message here"><br><br>
+  <input type="submit" value="send">
+</div>
+
+<?php
+
+}} ?>
+<br>
+
+ 
+  </form>
+
+
 </div>
 
 
 
 
-
-
-  </div>
-  <div class="col-sm-8">
-
-
-
-
-
-</div>
 
 
 <?php
@@ -300,6 +277,14 @@ mysqli_close($con);
 
 ?>
 
+
+
+
+
+  </div>
+  </div>
+  </div>
+<div class="div-1" style="background-color: black;  height: 300px;"> I love HTML </br> I love HTML</br> I love HTML
 
 
 </body>
