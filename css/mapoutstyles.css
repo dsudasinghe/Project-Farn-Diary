@@ -1,0 +1,58 @@
+
+.wed{
+    color: red;
+    text-align: center;
+    animation: 3s ease-out 0s 1 slideInFromLeft;
+    height: 50%;
+    margin-top: 20%;
+    margin-bottom: 20%;
+
+    
+}
+.infow{
+    color: blue;
+    border:3px brown;
+
+}
+.cardprice{
+    color: chartreuse;
+    text-align: center;
+    animation: 5s ease-out 0s 1 slideInFromLeft;
+    
+}
+.div-1{
+    background-color: black;
+    height: 30%;
+}
+
+
+.formss{
+    border-radius: 25px;
+    background: #73AD21;
+   
+  }
+
+.testtt{
+    position: absolute;
+    left: -100px;
+    width: 100px;
+    height: 100px;
+    background: blue;
+    -webkit-animation: slide 0.5s forwards;
+    -webkit-animation-delay: 2s;
+    animation: slide 0.5s forwards;
+    animation-delay: 2s;
+}
+
+
+
+@keyframes slideInFromLeft {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  
