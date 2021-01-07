@@ -45,8 +45,10 @@
   
 
     //Get text
+    $first_name= $_POST['nicnum'];
     $first_name= $_POST['first_name'];
     $last_name= $_POST['last_name'];
+    $first_name= $_POST['contactnum'];
     $email= $_POST['email'];
     $pwd= $_POST['pwd'];
     $pwdcon= $_POST['pwdcon'];
@@ -73,7 +75,7 @@
     //insert query
   
     
-    $sql = "INSERT INTO logininfo(first_name,last_name,email,pwd) values ('$first_name','$last_name','$email','$passw')";
+    $sql = "INSERT INTO staff( `s_fname`, `s_lname`, `s_contact`, `s_address`, `s_email`, `s_nic`, `s_password`) values ('$nic','$first_name','$last_name','$contactnum','$email','$passw')";
   
     
     //excute query
@@ -119,17 +121,13 @@
         <form action="signup.php" method="POST" enctype="multipart/form-data">
         <h1>Sign up</h1>
 
+     <input type="text" name="nicnum" placeholder="Enter nic number">
      <input type="text" name="first_name" placeholder="Enter Your First Name">
-  
-   
      <input type="text" name="last_name" placeholder="Enter Your Last Name">
-  
-    
+     <input type="text" name="contactnum" placeholder="Enter mobile number">
      <input class="mail" type="email" name="email" placeholder="Enter Your Email"> 
-
-    <input type="password" name="pwd"placeholder="Enter Your Password">
-
-    <input type="password" name="pwdcon"placeholder="Confirm Your Password">
+     <input type="password" name="pwd"placeholder="Enter Your Password">
+     <input type="password" name="pwdcon"placeholder="Confirm Your Password">
  
    
 <button type="submit" name="submit" class="submitbtn">Sign up</button>
