@@ -63,7 +63,7 @@
     <img src="avatar.png" class="avatar">
         <h1>Login Here</h1>
             <form action="Login_Menu.php" method="POST" enctype="multipart/form-data">
-            <p>Username </p>
+            <p>NIC </p>
             <input type="text" name="username1" placeholder="NIC">
             <p>Password</p>
             <input type="password" name="password1" placeholder="Enter Your Password">

@@ -1,3 +1,5 @@
+<?php session_start()
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,6 +20,11 @@
 
 
 <body>
+
+
+
+
+<?php include 'navcommon.php'; ?>
 
 <?php include 'dbconnect.php'; ?>
 
