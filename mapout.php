@@ -13,7 +13,8 @@
 <!-- added styles from home page -->
 
 <link href="fontawesome-free-5.12.0-web/css/all.css" rel="stylesheet">
-<link rel="shortcut icon" href="img/icon.png" />
+
+<link rel="shortcut icon" type="image/jpg" href="images/keellslogo.png"/>
 
 
 </head>

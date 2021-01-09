@@ -37,14 +37,14 @@ if (mysqli_num_rows($result2) > 0)
   while($row = mysqli_fetch_assoc($result2))
    {
     ?>
-  <div     style='margin-left: 75%;'>
-
+  <div     style='margin-left: 75% ;   color:white;'>
+<b>
   <?php echo $row["s_fname"]; ?>&nbsp;
   <?php echo $row["s_lname"]; ?>&nbsp;
      
-   
+  </b>   
 
-</div>
+  </div>
      
 <?php
    }}
@@ -54,9 +54,11 @@ mysqli_close($con);
 
 ?>
 
-   <a class="link-light" href="logout.php">Logout</a>
- 
    
+   <a class="link-dark" href="logout.php" style="
+   color:white">Logout</a>
+ 
+
 
  </nav>
  </div>
