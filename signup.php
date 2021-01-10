@@ -8,17 +8,16 @@
 <!-- bootstrap -->
 <link rel="stylesheet" href="bootstrap-4.1.3-dist/css/bootstrap.min.css">
 
-<!-- added styles from home page -->
+<!-- added styles from home page
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="css/fixed.css">
 <link href="fontawesome-free-5.12.0-web/css/all.css" rel="stylesheet">
 <link rel="shortcut icon" href="img/icon.png" />
-
+ -->
 
 
 <!-- added styles from login page -->
 <title> Sign up</title>
-    <link rel="stylesheet" href="Style_4.css">
 <link rel="stylesheet" href="css/Style_4.css">
 
     </head>
@@ -45,13 +44,16 @@
   
 
     //Get text
-    $first_name= $_POST['nicnum'];
+    $nic= $_POST['nicnum'];
     $first_name= $_POST['first_name'];
     $last_name= $_POST['last_name'];
-    $first_name= $_POST['contactnum'];
+    $contactnum= $_POST['contactnum'];
+    $s_address= $_POST['s_address'];
     $email= $_POST['email'];
     $pwd= $_POST['pwd'];
     $pwdcon= $_POST['pwdcon'];
+
+    echo "<script>alert('$nic,$first_name, $last_name,$contactnum,$s_address,$email,$pwd,$pwdcon');</script>"; 
 
    if($pwdcon==$pwd){
      $passw=$pwd;}
@@ -62,25 +64,16 @@
    
    $passw=md5($passw);
 
-
-
-
-
-
-  	
-  
-    
-  
-    
+   echo "<script>alert('$passw');</script>"; 
     //insert query
   
     
-    $sql = "INSERT INTO staff( `s_fname`, `s_lname`, `s_contact`, `s_address`, `s_email`, `s_nic`, `s_password`) values ('$nic','$first_name','$last_name','$contactnum','$email','$passw')";
+    $sql = "INSERT INTO `staff`(`s_fname`, `s_lname`, `s_contact`, `s_address`, `s_email`, `s_nic`, `s_password`) VALUES ('$first_name','$last_name','$contactnum','$s_address','$email','$nic','$passw')";
+    
   
     
     //excute query
   
-    
     mysqli_query($db,$sql);
   
     
@@ -112,7 +105,7 @@
 
 
 
-    <div class="login-box">
+    <div class="login-box" style="height: auto;">
 
 
 <div class="container">
@@ -125,6 +118,7 @@
      <input type="text" name="first_name" placeholder="Enter Your First Name">
      <input type="text" name="last_name" placeholder="Enter Your Last Name">
      <input type="text" name="contactnum" placeholder="Enter mobile number">
+     <input type="text" name="s_address" placeholder="Enter mobile number">
      <input class="mail" type="email" name="email" placeholder="Enter Your Email"> 
      <input type="password" name="pwd"placeholder="Enter Your Password">
      <input type="password" name="pwdcon"placeholder="Confirm Your Password">
