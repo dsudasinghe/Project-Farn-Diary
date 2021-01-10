@@ -130,161 +130,6 @@ var markerinfo = [
 
 
 
-</div>
-
-
-
-
-<div class="container">
-   
-   
-  <div class="container" style="  animation: 3s ease-out 0s 1 slideInFromLeft; border-radius: 25px;
-    background: #FFFFFF;     margin-top: 10%; margin-bottom: 10%;" >
-  
-  <form action="/action_page.php"  >
-  <div class="card card-body" style="
-    border: white;">  
-<label id="demo1"></label>
-
-<div class="container">
-<div class="row">
-<script>
-
-
-function createcontentcollapse(productid) {
-
-//alert(productid);
-var productidvar = productid;
-//document.getElementById("demo1").innerHTML = productid;
-document.cookie = "myJavascriptVar=" + productidvar; 
-window.location.reload();
-}
-</script>
-
- <?php
-$myPhpVar= $_COOKIE['myJavascriptVar'];
-
-//setting default
-if(is_null($myPhpVar)==1)
-{$myPhpVar=1;
-}
-else{
-
-$sql = "SELECT * FROM `product` where pid=$myPhpVar";
-$result = mysqli_query($con, $sql);
-//setcookie("myJavascriptVar","");
-if (mysqli_num_rows($result) > 0)
- {
-  // output data of each row
-  while($row = mysqli_fetch_assoc($result))
-   {
-    ?>
-  <div class="card" style="width:auto; border: white;">
-
-
-
-   <table>
-   <tr>
-   <td>
-  <img class="card-img-top" style="width: 40%;" src="uploads\<?php echo $row['image']; ?>" alt="Card image cap">
-  </td>
-  <td></td>
-  </tr>
-
-  </table>
-
-
-  <div class="card-body">
-
-   <h1><?php 
-   
-   
-   if($row['type']==1){
-    echo "fruit";
-   }
-   
-   
-    ?></h1> 
-  <?php
-      echo $row["datetime"];
-      echo $row["senderid"];
-      echo $row["price"];
-      ?>
-    <h1 class=cardprice>price  1Kg <?php echo +$row['price']; ?>  lkr</h1> 
-    <p class="card-text"><?php echo $row['description']; ?></p>
-  </div>
-
-
-</div>
-
-
-<br>
-
-<?php
-
-
-
-
-$senderrr=$row["senderid"];
-
-
-
-
-
-
-
-
-    }} ?>
-
-<?php
-
-
-
-
-
-?>
-  </div>
-</div>
-
-
-   <?php
-
-$sql2 = "SELECT * FROM `farmer` where fid=$senderrr";
-$result2 = mysqli_query($con, $sql2);
-//setcookie("myJavascriptVar","");
-if (mysqli_num_rows($result2) > 0)
- {
-  // output data of each row
-  while($row = mysqli_fetch_assoc($result2))
-   {
-    ?>
-  <div>
-  <h1>
-  <?php
-      echo $row["fcontact"]; ?>&nbsp;
-   <?php   echo $row["femail"]; ?> &nbsp;
-     <?php echo $row["ffirstname"]; ?>&nbsp;
-     
-    </h1>
-  </div>
-  <label for="lname">message:</label><br>
-  <input type="text" id="lname" name="lname" value="enter your message here"><br><br>
-  <input type="submit" value="send">
-</div>
-
-<?php
-
-}} ?>
-<br>
-
- 
-  </form>
-
-
-</div>
-
-
-
 
 
 
@@ -292,7 +137,7 @@ if (mysqli_num_rows($result2) > 0)
 
 mysqli_close($con);
 
-}
+
 
 ?>
 
@@ -303,7 +148,7 @@ mysqli_close($con);
   </div>
   </div>
   </div>
-<div class="div-1" style="background-color: black;  height: 300px;"></div>
+<div class="div-1" style="background-color: black;  height: 300px;"> </div>
 
 
 </body>
