@@ -141,7 +141,7 @@ var markerinfo = [
   <div class="container" style="  animation: 3s ease-out 0s 1 slideInFromLeft; border-radius: 25px;
     background: #FFFFFF;     margin-top: 10%; margin-bottom: 10%;" >
   
-  <form action="/action_page.php"  >
+  <form action="messagesend.php" method="post" >
   <div class="card card-body" style="
     border: white;">  
 <label id="demo1"></label>
@@ -163,12 +163,10 @@ window.location.reload();
 
  <?php
 $myPhpVar= $_COOKIE['myJavascriptVar'];
-
 //setting default
 if(is_null($myPhpVar)==1)
 {$myPhpVar=1;
 }
-else{
 
 $sql = "SELECT * FROM `product` where pid=$myPhpVar";
 $result = mysqli_query($con, $sql);
@@ -188,7 +186,11 @@ if (mysqli_num_rows($result) > 0)
    <td>
   <img class="card-img-top" style="width: 40%;" src="uploads\<?php echo $row['image']; ?>" alt="Card image cap">
   </td>
-  <td></td>
+  <td style="padding-bottom:20%;">
+
+  <a  class="btn btn-danger" href="deleteproduct.php?pid=<?php echo $myPhpVar ?>">delete</a>
+  <!--<button type="button" class="btn btn-danger" onclick="location.href='logout.php'" >Delete</button> -->
+  </td>
   </tr>
 
   </table>
@@ -199,6 +201,7 @@ if (mysqli_num_rows($result) > 0)
    <h1><?php 
    
    
+   $senderrr=$row["senderid"];
    if($row['type']==1){
     echo "fruit";
    }
@@ -207,7 +210,7 @@ if (mysqli_num_rows($result) > 0)
     ?></h1> 
   <?php
       echo $row["datetime"];
-      echo $row["senderid"];
+     
       echo $row["price"];
       ?>
     <h1 class=cardprice>price  1Kg <?php echo +$row['price']; ?>  lkr</h1> 
@@ -225,16 +228,7 @@ if (mysqli_num_rows($result) > 0)
 
 
 
-$senderrr=$row["senderid"];
-
-
-
-
-
-
-
-
-    }} ?>
+    } ?>
 
 <?php
 
@@ -247,7 +241,13 @@ $senderrr=$row["senderid"];
 </div>
 
 
+
+
    <?php
+if(is_null($senderrr)==1)
+{$senderrr=1;
+}
+
 
 $sql2 = "SELECT * FROM `farmer` where fid=$senderrr";
 $result2 = mysqli_query($con, $sql2);
@@ -259,17 +259,22 @@ if (mysqli_num_rows($result2) > 0)
    {
     ?>
   <div>
-  <h1>
+  <h1 style="color:green;">
   <?php
-      echo $row["fcontact"]; ?>&nbsp;
+          echo $row["fcontact"]; ?>&nbsp;
    <?php   echo $row["femail"]; ?> &nbsp;
      <?php echo $row["ffirstname"]; ?>&nbsp;
      
     </h1>
   </div>
+
+
+
+  <input style="display:none;" type="text" value="<?php echo $senderrr?>" name="receverid" />
+
   <label for="lname">message:</label><br>
-  <input type="text" id="lname" name="lname" value="enter your message here"><br><br>
-  <input type="submit" value="send">
+  <input type="text" id="mess" name="message" value="enter your message here"><br><br>
+  <input class="btn btn-outline-success" type="submit" value="send">
 </div>
 
 <?php
@@ -292,7 +297,7 @@ if (mysqli_num_rows($result2) > 0)
 
 mysqli_close($con);
 
-}
+
 
 ?>
 
@@ -304,6 +309,51 @@ mysqli_close($con);
   </div>
   </div>
 <div class="div-1" style="background-color: black;  height: 300px;"></div>
+</div>
+<?php include 'dbconnect.php'; ?>
+<script>
+
+function deleteproductss() {
+alert("<?php echo $myPhpVar ?> ");
+
+alert("<?php echo $myPhpVar ?> ");
+window.location.reload();
+}
+
+
+</script>
+
+
+
+
+
+
+
+<?php mysqli_close($con); 
+
+
+ }
+?>
+
+
+
+<?php 
+
+
+
+
+
+
+
+
+
+
+
+
+
+?>
+
+
 
 
 </body>
