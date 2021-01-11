@@ -4,14 +4,12 @@
 
 
 include 'dbconnect.php'; // Using database connection file here
-$senderid=$_SESSION["userid1"];
+$senderid=$_SESSION["username1"];
 // check if the post method is used to submit the form
 $messege2farmer = $_POST["message"];
 $receverid = $_POST["receverid"];
 
-
-
-// get id through query string
+// get i through query string
 // check if the post method is used to submit the form
 
  echo $messege2farmer; 
