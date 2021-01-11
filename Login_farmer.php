@@ -61,7 +61,7 @@
 
     <div class="login-box">
     <img src="avatar.png" class="avatar">
-        <h1>Login Here</h1>
+        <h1>Customer Login </h1>
             <form action="Login_Menu.php" method="POST" enctype="multipart/form-data">
             <p>NIC </p>
             <input type="text" name="username1" placeholder="NIC">

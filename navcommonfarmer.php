@@ -16,7 +16,7 @@
   <!-- Navbar content -->
 
 
-  <img   src="img/keellslogo1.png" alt="" height="40px" width="80px" >
+  <img   src="images/keelsico2.PNG" alt="" >
 
 <?php include 'dbconnect.php'; ?>
   
@@ -28,7 +28,7 @@
    $tesst=$_SESSION["username1"];
    
 
-$sql3 = "SELECT * FROM `staff` where s_nic='$tesst'";
+$sql3 = "SELECT * FROM `farmer` where f_nic='$tesst'";
 $result2 = mysqli_query($con, $sql3);
 //setcookie("myJavascriptVar","");
 if (mysqli_num_rows($result2) > 0)
@@ -39,8 +39,8 @@ if (mysqli_num_rows($result2) > 0)
     ?>
   <div     style='margin-left: 75% ;   color:white;'>
 <b>
-  <?php echo $row["s_fname"]; ?>&nbsp;
-  <?php echo $row["s_lname"]; ?>&nbsp;
+  <?php echo $row["ffirstname"]; ?>&nbsp;
+  <?php echo $row["flastname"]; ?>&nbsp;
      
   </b>   
 

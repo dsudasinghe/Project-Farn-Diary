@@ -42,7 +42,7 @@
 
 
 
-<div class="container-fluid">
+<div class="container-fluid" style="padding-right: 0px; padding-left:0px;">
   
 
 <div>
@@ -308,7 +308,7 @@ mysqli_close($con);
   </div>
   </div>
   </div>
-<div class="div-1" style="background-color: black;  height: 300px;"></div>
+
 </div>
 <?php include 'dbconnect.php'; ?>
 <script>
@@ -353,7 +353,7 @@ window.location.reload();
 
 ?>
 
-
+<?php include 'footer.php'; ?>
 
 
 </body>
