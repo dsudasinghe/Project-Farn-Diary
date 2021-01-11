@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Modal</title>
+  <link href="styles.css" rel="stylesheet">
+  <script defer src="script.js"></script>
+</head>
+<body>
+<div style="background:blue">
+  <button data-modal-target="#modal">Open Modal</button>
+  <div class="modal" id="modal">
+    <div class="modal-header">
+      
+      <button data-close-button class="close-button">&times;</button>
+    </div>
+    <div class="modal-body">
+     <button data-modal-target="#modal">Master Login</button> <button data-modal-target="#modal">Staff Login</button> <button data-modal-target="#modal">farmer Login</button>
+    </div>
+  </div>
+  <div id="overlay"></div>
+</div>
+</body>
+</html>
