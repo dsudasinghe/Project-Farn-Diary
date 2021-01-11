@@ -31,13 +31,17 @@
 
 
 
+<div style="background-image: url(images/cover11111.PNG); height: 938px; width: 1911px;"><h1 style="color: red;
+    text-align: center;
+    animation: 3s ease-out 0s 1 slideInFromLeft ">Welcome To Keels</h1></div>
 
+<div>
 
-<h1 class=wed id="wed1">welcome to keels</h1>
-
-
+&nbsp;
+</div>
 <div class="row" style="
-    background-color: #21B6A8;
+    background-color: #21B6A8
+    ;
 ">
 
 
