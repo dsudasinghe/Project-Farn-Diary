@@ -10,6 +10,14 @@ if($del)
 {
     mysqli_close($con); // Close connection
     header("location:mapout.php"); // redirects to all records page
+    ?>
+
+    <script>
+
+    document.cookie = "myJavascriptVar=1"; 
+    </script>
+
+    <?php
     exit;	
 }
 else
