@@ -188,7 +188,11 @@ if (mysqli_num_rows($result) > 0)
    <td>
   <img class="card-img-top" style="width: 40%;" src="uploads\<?php echo $row['image']; ?>" alt="Card image cap">
   </td>
-  <td></td>
+  <td>
+  <a href="deleteproduct.php?pid=<?php echo $myPhpVar ?>">delete</a>
+  <!--<button type="button" class="btn btn-danger" onclick="location.href='logout.php'" >Delete</button> -->
+
+  </td>
   </tr>
 
   </table>
@@ -304,6 +308,31 @@ mysqli_close($con);
   </div>
   </div>
 <div class="div-1" style="background-color: black;  height: 300px;"></div>
+</div>
+<?php include 'dbconnect.php'; ?>
+<script>
+
+function deleteproductss() {
+alert("<?php echo $myPhpVar ?> ");
+
+alert("<?php echo $myPhpVar ?> ");
+window.location.reload();
+}
+
+
+</script>
+
+
+
+
+
+
+
+<?php mysqli_close($con); ?>
+
+
+
+
 
 
 </body>
