@@ -10,7 +10,7 @@
 <link rel="shortcut icon" href="img/icon.png" />
 
 </head>
-    <body>
+    <body style=" background-image: url(img/farmer.jpg); ">
 
   <?php
         $servername="localhost";
