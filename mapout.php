@@ -31,18 +31,22 @@
 
 
 
+<div style="background-image: url(images/cover11111.PNG); height: 938px; width: 1911px;"><h1 style="color: red;
+    text-align: center;
+    animation: 3s ease-out 0s 1 slideInFromLeft "><b>Welcome To Keels</b></h1></div>
 
+<div>
 
-<h1 class=wed id="wed1">welcome to keels</h1>
-
-
+&nbsp;
+</div>
 <div class="row" style="
-    background-color: #21B6A8;
+    background-color: #21B6A8
+    ;
 ">
 
 
 
-<div class="container-fluid">
+<div class="container-fluid" style="padding-right: 0px; padding-left:0px;">
   
 
 <div>
@@ -308,7 +312,7 @@ mysqli_close($con);
   </div>
   </div>
   </div>
-<div class="div-1" style="background-color: black;  height: 300px;"></div>
+
 </div>
 <?php include 'dbconnect.php'; ?>
 <script>
@@ -353,7 +357,7 @@ window.location.reload();
 
 ?>
 
-
+<?php include 'footer.php'; ?>
 
 
 </body>

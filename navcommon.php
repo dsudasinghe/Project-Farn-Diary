@@ -16,7 +16,7 @@
   <!-- Navbar content -->
 
 
-  <img   src="images/keelsico2.PNG" alt="" >
+  <img   src="img/keellslogo1.png" alt="" height="40px" width="80px" >
 
 <?php include 'dbconnect.php'; ?>
   

@@ -17,7 +17,7 @@
 
 
 <!-- added styles from login page -->
-<title> Sign up</title>
+<title> create staff profile</title>
 <link rel="stylesheet" href="css/Style_4.css">
 
     </head>
@@ -118,17 +118,17 @@
      <input type="text" name="first_name" placeholder="Enter Your First Name">
      <input type="text" name="last_name" placeholder="Enter Your Last Name">
      <input type="text" name="contactnum" placeholder="Enter mobile number">
-     <input type="text" name="s_address" placeholder="Enter mobile number">
+     <input type="text" name="s_address" placeholder="Enter your address">
      <input class="mail" type="email" name="email" placeholder="Enter Your Email"> 
      <input type="password" name="pwd"placeholder="Enter Your Password">
      <input type="password" name="pwdcon"placeholder="Confirm Your Password">
  
    
-<button type="submit" name="submit" class="submitbtn">Sign up</button>
+<button type="submit" name="submit" class="submitbtn">Create Account</button>
 </div>
 <p>By creating an account you agree to our <a href="Login_Menu.php">Terms & Privacy</a>.</p>
 <div class="container signin">
-<p>Already have an account? <a href="Login_Menu.php">login</a>.</p>
+
 </div>
 </div>
 
