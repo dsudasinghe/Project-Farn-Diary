@@ -33,7 +33,7 @@
 
 <div style="background-image: url(images/cover11111.PNG); height: 938px; width: 1911px;"><h1 style="color: red;
     text-align: center;
-    animation: 3s ease-out 0s 1 slideInFromLeft ">Welcome To Keels</h1></div>
+    animation: 3s ease-out 0s 1 slideInFromLeft "><b>Welcome To Keels</b></h1></div>
 
 <div>
 
