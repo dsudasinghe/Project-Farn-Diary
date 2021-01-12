@@ -2,10 +2,15 @@
 <html>
 <body>
 
+
+
+
+
+
 <?php include 'navcommonfarmer.php'; ?>
 
 
-<div class="container-fluid" style="padding-right: 0px; padding-left:0px;">
+<div class="container-fluid" style="padding-right: 0px; padding-left:0px; ">
 
 
 <?php include 'messagerecive.php'; ?>
@@ -13,7 +18,6 @@
 <div>
 
 
-<h1>My First Google Map</h1>
 
 <div id="map" style="width:100%;height:800px;"></div>
 
@@ -27,7 +31,7 @@ function myMap() {
   marker.setMap(map);
 
   var infowindow = new google.maps.InfoWindow({
-  content:'<form action = "inputdata.php" method = "post" enctype = "multipart/form-data"></br> Content: <input type="text" name = "con"> <br> Latitude : <input type ="hidden" name"lat" value="'+myCenter.lat()+'"> <input type = "submit"> </form>'
+  content:'<form action="mapinput.php" method ="post"></br>   </br> type: <input type="text" name="type"></br> datetime: <input type="text" name="datetime"></br> price: <input type="text" name="price"></br> description: <input type="text" name="description"></br> </br> image: <input type="file" name="image"> <input type = "submit"> </form>'
   });
 
   infowindow.open(map,marker);
@@ -38,7 +42,11 @@ function myMap() {
 
 
 
+
 <?php include 'footer.php'; ?>
+
+
+
 
 </body>
 </html>
