@@ -37,14 +37,14 @@
                 $username1 =$_POST["username1"];  
                 $password1 =$_POST["password1"];  
                 $password1 = md5($password1);  
-                $query = "SELECT * FROM staff WHERE s_nic = '$username1' AND s_password = '$password1'";  
+                $query = "SELECT * FROM master WHERE m_nic = '$username1' AND m_password = '$password1'";  
                 $result = mysqli_query($con, $query);  
                 if(mysqli_num_rows($result) > 0)  
                 {  
                     
                      $_SESSION['username1'] = "$username1";
                      
-                    header("Location:mapout.php");  
+                    header("Location:masterpage.php");  
                       
                 }  
                 else  
@@ -61,8 +61,8 @@
 
     <div class="login-box">
     <img src="avatar.png" class="avatar">
-        <h1>Login Here</h1>
-            <form action="Login_Menu.php" method="POST" enctype="multipart/form-data">
+        <h1> Master Login </h1>
+            <form action="Login_master.php" method="POST" enctype="multipart/form-data">
             <p>NIC </p>
             <input type="text" name="username1" placeholder="NIC">
             <p>Password</p>
@@ -70,7 +70,6 @@
             <input type="submit" name="submit" value="Login">
             <div class="row">
             <a href="#">Forget Password </a>
-           
             </div>   
             </form>
         
