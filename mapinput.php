@@ -2,6 +2,12 @@
 <html>
 <body>
 
+<?php include 'navcommonfarmer.php'; ?>
+
+
+
+
+
 <h1>My First Google Map</h1>
 
 <div id="googleMap" style="width:100%;height:800px;"></div>
@@ -19,6 +25,8 @@ var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBheNEtrngM3cbowGS3tLPwoBXlswmmSb0&callback=myMap"></script>
 
 
+
+<?php include 'footer.php'; ?>
 
 </body>
 </html>

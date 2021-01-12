@@ -3,11 +3,20 @@
     color: red;
     text-align: center;
     animation: 3s ease-out 0s 1 slideInFromLeft;
-    height: 50%;
+  /*  height: 50%;
     margin-top: 20%;
-    margin-bottom: 20%;
+    margin-bottom: 20%;*/
+    background-image: url('bgffff');
 
     
+}
+
+
+.testtt1{
+  background-image: url('bgffff');
+
+
+
 }
 .infow{
     color: blue;
@@ -15,7 +24,7 @@
 
 }
 .cardprice{
-    color: chartreuse;
+    color: green;
     text-align: center;
     animation: 5s ease-out 0s 1 slideInFromLeft;
     
@@ -28,7 +37,7 @@
 
 .formss{
     border-radius: 25px;
-    background: #73AD21;
+    background: green;
    
   }
 
@@ -54,12 +63,12 @@
       transform: translateX(0);
     }
   }
-  
+   /*
   #wed1{
-    height: 50%;
+   height: 50%;
     margin-top: 20%;
     margin-bottom: 20%;
-  }
+  }*/
 
   #row1{
     background-color: seagreen;

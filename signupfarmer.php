@@ -17,7 +17,7 @@
 
 
 <!-- added styles from login page -->
-<title> create staff profile</title>
+<title> Sign up</title>
 <link rel="stylesheet" href="css/Style_4.css">
 
     </head>
@@ -67,10 +67,7 @@
    echo "<script>alert('$passw');</script>"; 
     //insert query
   
-    
-    $sql = "INSERT INTO `staff`(`s_fname`, `s_lname`, `s_contact`, `s_address`, `s_email`, `s_nic`, `s_password`) VALUES ('$first_name','$last_name','$contactnum','$s_address','$email','$nic','$passw')";
-    
-  
+    $sql = "INSERT INTO `farmer`(`ffirstname`, `flastname`, `fcontact`, `faddress`, `femail`, `fnic`, `fpassword`) VALUES ('$first_name','$last_name','$contactnum','$s_address','$email','$nic','$passw')";
     
     //excute query
   
@@ -118,17 +115,17 @@
      <input type="text" name="first_name" placeholder="Enter Your First Name">
      <input type="text" name="last_name" placeholder="Enter Your Last Name">
      <input type="text" name="contactnum" placeholder="Enter mobile number">
-     <input type="text" name="s_address" placeholder="Enter your address">
+     <input type="text" name="s_address" placeholder="Enter address">
      <input class="mail" type="email" name="email" placeholder="Enter Your Email"> 
      <input type="password" name="pwd"placeholder="Enter Your Password">
      <input type="password" name="pwdcon"placeholder="Confirm Your Password">
  
    
-<button type="submit" name="submit" class="submitbtn">Create Account</button>
+<button type="submit" name="submit" class="submitbtn">Sign up</button>
 </div>
 <p>By creating an account you agree to our <a href="Login_Menu.php">Terms & Privacy</a>.</p>
 <div class="container signin">
-
+<p>Already have an account? <a href="Login_Menu.php">login</a>.</p>
 </div>
 </div>
 

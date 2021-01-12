@@ -14,9 +14,7 @@
 <div class="sticky-top">
 <nav class="navbar navbar-light" style="background-color: #0e9647;">
   <!-- Navbar content -->
-
-
-  <img   src="img/keellslogo1.png" alt="" height="40px" width="80px" >
+<img   src="img/keellslogo1.png" alt="" height="40px" width="80px" >
 
 <?php include 'dbconnect.php'; ?>
   
@@ -24,11 +22,11 @@
 
    <?php
    
-   
+   /*
    $tesst=$_SESSION["username1"];
    
 
-$sql3 = "SELECT * FROM `staff` where s_nic='$tesst'";
+$sql3 = "SELECT * FROM `master` where m_nic='$tesst'";
 $result2 = mysqli_query($con, $sql3);
 //setcookie("myJavascriptVar","");
 if (mysqli_num_rows($result2) > 0)
@@ -39,8 +37,8 @@ if (mysqli_num_rows($result2) > 0)
     ?>
   <div     style='margin-left: 75% ;   color:white;'>
 <b>
-  <?php echo $row["s_fname"]; ?>&nbsp;
-  <?php echo $row["s_lname"]; ?>&nbsp;
+  <?php echo $row["m_fname"]; ?>&nbsp;
+  <?php echo $row["m_lname"]; ?>&nbsp;
      
   </b>   
 
@@ -49,7 +47,7 @@ if (mysqli_num_rows($result2) > 0)
 <?php
    }}
 mysqli_close($con);
-
+*/
 
 
 ?>
