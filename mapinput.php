@@ -5,7 +5,12 @@
 <?php include 'navcommonfarmer.php'; ?>
 
 
+<div class="container-fluid" style="padding-right: 0px; padding-left:0px;">
 
+
+<?php include 'messagerecive.php'; ?>
+
+<div>
 
 
 <h1>My First Google Map</h1>

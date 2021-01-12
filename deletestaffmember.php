@@ -2,20 +2,15 @@
 
 include 'dbconnect.php'; // Using database connection file here
 
-$id = $_GET['pid']; // get id through query string
+$id = $_GET['sid']; // get id through query string
 
-$del = mysqli_query($con,"delete from `product` where pid = '$id'"); // delete query
+$del = mysqli_query($con,"delete from `staff` where s_id = '$id'"); // delete query
 
 if($del)
 {
     mysqli_close($con); // Close connection
-    header("location:mapout.php"); // redirects to all records page
+    header("location:masterpage.php"); // redirects to all records page
     ?>
-
-    <script>
-
-    document.cookie = "myJavascriptVar=1"; 
-    </script>
 
     <?php
     exit;	
