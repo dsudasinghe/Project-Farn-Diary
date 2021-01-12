@@ -15,15 +15,22 @@
 
 <h1>My First Google Map</h1>
 
-<div id="googleMap" style="width:100%;height:400px;"></div>
+<div id="map" style="width:100%;height:800px;"></div>
 
 <script>
 function myMap() {
-var mapProp= {
-  center:new google.maps.LatLng(51.508742,-0.120850),
-  zoom:5,
-};
-var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+  let myCenter = new google.maps.LatLng(6.9271,79.8612);
+  let mapCanvas = document.getElementById("map");
+  let mapOptions = {center : myCenter , zoom : 15};
+  let map = new google.maps.Map(mapCanvas , mapOptions);
+  let marker = new google.maps.Marker({position : myCenter});
+  marker.setMap(map);
+
+  var infowindow = new google.maps.InfoWindow({
+  content:'<form action = "inputdata.php" method = "post" enctype = "multipart/form-data"></br> Content: <input type="text" name = "con"> <br> Latitude : <input type ="hidden" name"lat" value="'+myCenter.lat()+'"> <input type = "submit"> </form>'
+  });
+
+  infowindow.open(map,marker);
 }
 </script>
 
