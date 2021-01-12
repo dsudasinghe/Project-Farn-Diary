@@ -70,7 +70,7 @@
             <input type="submit" name="submit" value="Login">
             <div class="row">
             <a href="#">Forget Password </a>
-            <a href="signup.php"> &nbsp; &nbsp; &nbsp;signup</a>
+           
             </div>   
             </form>
         

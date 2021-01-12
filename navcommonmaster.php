@@ -14,9 +14,7 @@
 <div class="sticky-top">
 <nav class="navbar navbar-light" style="background-color: #0e9647;">
   <!-- Navbar content -->
-
-
-  <img   src="images/keelsico2.PNG" alt="" >
+<img   src="img/keellslogo1.png" alt="" height="40px" width="80px" >
 
 <?php include 'dbconnect.php'; ?>
   
@@ -24,7 +22,7 @@
 
    <?php
    
-   
+   /*
    $tesst=$_SESSION["username1"];
    
 
@@ -49,7 +47,7 @@ if (mysqli_num_rows($result2) > 0)
 <?php
    }}
 mysqli_close($con);
-
+*/
 
 
 ?>

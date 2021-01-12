@@ -44,7 +44,7 @@
                     
                      $_SESSION['username1'] = "$username1";
                      
-                    header("Location:mapout.php");  
+                    header("Location:masterpage.php");  
                       
                 }  
                 else  

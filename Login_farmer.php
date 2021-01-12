@@ -4,7 +4,7 @@
  
  <html>
 <head>
-    <title> Admin Login Panel </title>
+    <title> farmer Login Panel </title>
   
 <link rel="stylesheet" href="css/Style_3.css">
 <link rel="shortcut icon" href="img/icon.png" />
@@ -61,7 +61,7 @@
 
     <div class="login-box">
     <img src="avatar.png" class="avatar">
-        <h1>Customer Login </h1>
+        <h1>farmer Login </h1>
             <form action="Login_Menu.php" method="POST" enctype="multipart/form-data">
             <p>NIC </p>
             <input type="text" name="username1" placeholder="NIC">
@@ -70,7 +70,7 @@
             <input type="submit" name="submit" value="Login">
             <div class="row">
             <a href="#">Forget Password </a>
-            <a href="signup.php"> &nbsp; &nbsp; &nbsp;signup</a>
+            <a href="signupfarmer.php"> &nbsp; &nbsp; &nbsp;signup</a>
             </div>   
             </form>
         
