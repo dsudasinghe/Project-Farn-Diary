@@ -54,6 +54,10 @@ mysqli_close($con);
 
 ?>
 
+
+
+
+
    
    <a class="link-dark" href="logout.php" style="
    color:white">Logout</a>

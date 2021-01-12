@@ -31,16 +31,26 @@
 <?php include 'dbconnect.php'; ?>
 
 
+<div class="container-fluid" style="height:300px;">
+
 <h1>create new staff accounts</h1>
 
 <a  class="btn btn-danger" href="signup.php">create</a>
+</div>
+
+
+<div class="container-fluid" >
+
+
+
+
 
 
 <h1>manage staff accounts</h1>
 <table>
 
 <div>
-		<table border="1">
+		<table class="table table-hover" border="1">
 			<thead>
 				profile
 			</thead>
@@ -55,9 +65,11 @@
  padding: 10%;">
 							<td><?php echo $row['s_fname']; ?></td>
 							<td><?php echo $row['s_lname']; ?></td>
-                            <td><?php echo $row['s_nic']; ?></td>
+							<td><?php echo $row['s_nic']; ?></td>
+							<td><a href="#.php?sid=<?php echo $row['s_id'];?>">Edit</a></td>
 							<td>
-								<a href="deletemmember.php?sid=<?php echo $row['sid'];?>">Delete</a>
+								<a href="deletestaffmember.php?sid=<?php echo $row['s_id'];?>">Delete</a>
+								
 							</td>
 						</tr>
 						<?php
@@ -70,11 +82,25 @@
 
 
 
+	<?php
 
+mysqli_close($con);
+
+
+
+?>
 
 
 
 </table>
+
+
+
+
+
+
+
+
 
 
 

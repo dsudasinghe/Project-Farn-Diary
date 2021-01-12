@@ -4,12 +4,12 @@
 <title>message</title>
 </head>
 <body>
+	<div  style="
+	margin-left: 60%;">
 	<div>
-		<table border="1">
+		<table class="table table-hover" border="0">
 			<thead>
-				<th>sender</th>
-			
-				<th></th>
+			<b>inbox</b>
 			</thead>
 			<tbody>
 				<?php
@@ -20,10 +20,13 @@
 						?>
 						<tr style="border: 2px solid #dedede;
  padding: 10%;">
-							<td><?php echo $row['senderid']; ?></td>
-							<td><?php echo $row['message']; ?></td>
+							<td style="
+    border-right-width: 40%;
+"><?php echo $row['senderid']; ?>:</td>
+							<td ><?php echo $row['message']; ?></td>
+							&nbsp;
 							<td>
-								<a href="deletemessage.php?msgid=<?php echo $row['msgid'];?>">Delete</a>
+							<a href="deletemessage.php?msgid=<?php echo $row['msgid'];?>">  Delete</a>
 							</td>
 						</tr>
 						<?php
@@ -36,12 +39,20 @@
     <div>
    <form action="messagesend.php" method="post" >
    <input style="display:none;" type="text" value="<?php echo $senderrr?>" name="receverid" />
-   <label for="lname">message:</label><br>
-   <input type="text" id="mess" name="message" value="enter your message here"><br><br>
+   <label for="lname">reply:</label><br>
+   <input type="text" id="mess" name="message" value=""><br><br>
    <input class="btn btn-outline-success" type="submit" value="send">
     </form>
     </div>
 
+	<?php
+
+mysqli_close($con);
+
+
+
+?>
+	</div>
 
 
 </body>
