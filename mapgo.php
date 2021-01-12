@@ -1,20 +1,6 @@
-<?php session_start()
-?>
-<!DOCTYPE html>
+
 <html>
 <head>
-
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-<link href="css/mapoutstyles.css" rel="stylesheet" type="text/css" >
-<!-- bootstrap -->
-<link rel="stylesheet" href="bootstrap-4.1.3-dist/css/bootstrap.min.css">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
-<!-- added styles from home page -->
-
-<link href="fontawesome-free-5.12.0-web/css/all.css" rel="stylesheet">
-
-<link rel="shortcut icon" type="image/jpg" href="images/keellslogo.png"/>
 
 
 </head>
@@ -25,7 +11,6 @@
 
 
 
-<?php include 'navcommon.php'; ?>
 
 <?php include 'dbconnect.php'; ?>
 
@@ -33,12 +18,10 @@
 
 
 
-<h1 class=wed id="wed1">welcome to keels</h1>
 
 
-<div class="row" style="
-    background-color: seagreen;
-">
+
+<div class="row">
 
 
 
@@ -48,7 +31,7 @@
 <div>
 
 
-<div id="googleMap" style="width:100%;height:1200px;"></div>
+<div id="googleMap" style="width:100%;height:900px;"></div>
 
 <script>
 function myMap() {
@@ -148,7 +131,6 @@ mysqli_close($con);
   </div>
   </div>
   </div>
-<div class="div-1" style="background-color: black;  height: 300px;"> </div>
 
 
 </body>
