@@ -31,15 +31,15 @@ if (isset($_POST['submit'])) {
   $description= $_POST['description'];
   $datetime= $_POST['datetime'];
   $price= $_POST['price'];
-  $image = $_FILES['image']['name']; 
+  //$image = $_FILES['image']['name']; 
   
 
 
-  $move=move_uploaded_file($_FILES["image"]["tmp_name"],"uploads/". $_FILES["image"]["name"]);	
+  //$move=move_uploaded_file($_FILES["image"]["tmp_name"],"uploads/". $_FILES["image"]["name"]);	
 
    
     
-  $sql = "INSERT INTO product(latitude,longitude,price,datetime,type,description,image) values ('$latitude','$longitude','$price','$datetime','$type','$description','$senderid','$image')";
+  $sql = "INSERT INTO product(latitude,longitude,price,datetime,type,description) values ('$latitude','$longitude','$price','$datetime','$type','$description','$senderid')";
   
     
   //excute query
