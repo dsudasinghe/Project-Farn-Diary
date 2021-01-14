@@ -1,66 +1,67 @@
+<html>
 <?php
-  if(isset($_POST['submit'])){
-  
-    //Get image name
-  
-    $var1 = $_FILES['image']['name'];
-    //Get text
-    $type= $_POST['type'];
-    $description= $_POST['description'];
-    $datetime= $_POST['datetime'];
-    $senderid= $_POST['senderid'];
-    $price= $_POST['price'];
-    $latitude= $_POST['latitude'];
-    $longitude= $_POST['longitude'];
-    echo $description,$price;
+
+
+
+
+include 'dbconnect.php'; 
+if (isset($_POST['latitude'])) {
+  // do logic
+  $latitude= $_POST['latitude'];
+  $longitude= $_POST['longitude'];
+  $type= $_POST['type'];
+  $description= $_POST['description'];
+  $datetime= $_POST['datetime'];
+  $price= $_POST['price'];
  
-  //image file directory
-  
-    $move=move_uploaded_file($_FILES["image"]["tmp_name"],"uploads/". $_FILES["image"]["name"]);			
-  
-    
-    include 'dbconnect.php'; 
-    //insert query
-  
+
+
+
+
+/*
+
+  $image = $_FILES['image']['name']; 
+  $move=move_uploaded_file($_FILES["image"]["tmp_name"],"uploads/". $_FILES["image"]["name"]);	
+
+*/
    
-  
-    $sql = "INSERT INTO product(`type`, `description`, `latitude`, `longitude`, `datetime`, `senderid`, `price`, `image`) values ('$type','$description','$latitude','$longitude','$datetime','$senderid','$price','$var')";
-    //excute query
+    
+  $sql = "INSERT INTO product(latitude,longitude,datetime,price) values ('$latitude','$longitude','$datetime','$price','$price')";
   
     
-    mysqli_query($db,$sql);
+  //excute query
+
   
-    
-    if($move)
+  mysqli_query($con,$sql);
+
+
+
+ echo 
+"latitude:$latitude,longitude:$longitude,type:$type,description:$description,datetime:$datetime,price:$price";  
+
   
-    
-    {
+
+
+
+
+  echo"all set";
   
-    
-      echo " successfully uploaded";
-  
-    
-    }else{
-  
-    
-      echo "Failed to upload";
-  
-    
-    }
-  
-    
+}
+
+  //Get text
+  else{
+
+
+    echo"shi*";
+
   }
-  
+
+
+
+ 
 
 ?>
 
 
 
-
-<?php
-
-mysqli_close($con);
-
-
-
-?>
+</html>
