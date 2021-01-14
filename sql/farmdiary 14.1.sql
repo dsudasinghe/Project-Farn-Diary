@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 14, 2021 at 11:27 AM
+-- Generation Time: Jan 14, 2021 at 11:51 AM
 -- Server version: 10.4.16-MariaDB
 -- PHP Version: 7.4.12
 
@@ -46,7 +46,8 @@ INSERT INTO `farmer` (`fid`, `fnic`, `fcontact`, `femail`, `faddress`, `fpasswor
 (1, '1', '97876', 'idk@gmail.com', '1', '1', 'test', 'farmer'),
 (2, '1', '7766667', 'hello@gmail.com', '1', '2', 'rat', 'mouse'),
 (3, '2', '+9471 1234567', 'sudash@gmail.com', '2', '2', 'S.sudas', '5'),
-(4, '0000000v', '1', '1', '1', '827ccb0eea8a706c4c34a16891f84e7b', '1', '1');
+(4, '0000000v', '1', '1', '1', '827ccb0eea8a706c4c34a16891f84e7b', '1', '1'),
+(5, '1111111v', '00000', 'lal@gmail.com', 'yhy', '81dc9bdb52d04dc20036dbd8313ed055', 'tt', 'tt');
 
 -- --------------------------------------------------------
 
@@ -127,12 +128,7 @@ INSERT INTO `product` (`pid`, `type`, `description`, `latitude`, `longitude`, `d
 (6, '2', 'Sollicitudin ac orci phasellus egestas tellus rutrum tellus pellentesque eu. Viverra maecenas accumsan lacus vel facilisis volutpat est velit. Vitae congue eu consequat ac felis donec et odio pellentesque. ', 7.09273, 79.9906, '2021-01-01 02:02:27', 2, 223, 'hu.jpg', 0),
 (8, '2', ' Congue nisi vitae suscipit tellus mauris a diam maecenas sed. Varius morbi enim nunc faucibus a. Amet commodo nulla facilisi nullam vehicula ipsum', 7.13779, 80.0029, '2020-12-24 02:02:36', 2, 223, 'dsd.jpg', 0),
 (9, '2', 'Odio facilisis mauris sit amet massa vitae. Adipiscing at in tellus integer. Quis imperdiet massa tincidunt nunc pulvinar sapien et. Mattis rhoncus urna neque viverra justo nec ultrices dui.', 7.15422, 80.0285, '2020-12-16 02:02:44', 2, 232, 'auberginew.jpg', 0),
-(10, '2', ' proin sagittis nisl rhoncus. Sed arcu non odio euismod lacinia at quis. Felis bibendum ut tristique et egestas quis ipsum suspendisse. ', 7.13024, 80.0321, '2020-12-24 02:02:38', 2, 2323, 'test.jpg', 0),
-(13, '', '', 6.9341, 79.8519, '0000-00-00 00:00:00', 0, 0, '', 0),
-(14, '', '', 6.93363, 79.8725, '0000-00-00 00:00:00', 0, 55, '', 0),
-(15, '', '', 6.93414, 79.8756, '2021-01-14 13:40:43', 0, 55, '', 0),
-(16, 'fruit', '', 6.93546, 79.8595, '2021-01-14 13:42:35', 0, 222, '', 0),
-(17, 'vegi', '22', 6.93039, 79.8602, '2021-01-14 13:44:12', 0, 111, '', 0);
+(10, '2', ' proin sagittis nisl rhoncus. Sed arcu non odio euismod lacinia at quis. Felis bibendum ut tristique et egestas quis ipsum suspendisse. ', 7.13024, 80.0321, '2020-12-24 02:02:38', 2, 2323, 'test.jpg', 0);
 
 -- --------------------------------------------------------
 
@@ -157,7 +153,9 @@ CREATE TABLE `staff` (
 
 INSERT INTO `staff` (`s_id`, `s_fname`, `s_lname`, `s_contact`, `s_address`, `s_email`, `s_nic`, `s_password`) VALUES
 (1, 'lalindu', 'wenasara', '71007111', 'diwulapitiya gampaha', 'laindu@gmail.com', '973450816v', '81dc9bdb52d04dc20036dbd8313ed055'),
-(7, 'Lahiru', 'Dananjaya', '071222222', 'flower road ,colombo', 'dana@gmail.com', '1111111v', '81dc9bdb52d04dc20036dbd8313ed055');
+(7, 'Lahiru', 'Dananjaya', '071222222', 'flower road ,colombo', 'dana@gmail.com', '1111111v', '81dc9bdb52d04dc20036dbd8313ed055'),
+(11, '', '', '', '', '', '', 'd41d8cd98f00b204e9800998ecf8427e'),
+(12, 'test', 'test', '00000', 'aaaa', '0000@gmail.cpm', '12345v', '81dc9bdb52d04dc20036dbd8313ed055');
 
 --
 -- Indexes for dumped tables
@@ -201,7 +199,7 @@ ALTER TABLE `staff`
 -- AUTO_INCREMENT for table `farmer`
 --
 ALTER TABLE `farmer`
-  MODIFY `fid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `fid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `master`
@@ -225,7 +223,7 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT for table `staff`
 --
 ALTER TABLE `staff`
-  MODIFY `s_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `s_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
