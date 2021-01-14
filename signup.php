@@ -22,7 +22,7 @@
 
     </head>
    
-<body>
+<body style=" background-image: url(img/staff.jpg); ">
 
 
 
