@@ -12,6 +12,9 @@ $receverid = $_POST["receverid"];
 // get i through query string
 // check if the post method is used to submit the form
 
+
+
+
  echo $messege2farmer; 
 
 $send = mysqli_query($con,"insert into message(receverid,senderid,message) VALUES ('$receverid','$senderid','$messege2farmer')"); // delete query
