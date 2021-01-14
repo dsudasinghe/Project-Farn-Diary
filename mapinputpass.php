@@ -1,66 +1,79 @@
+<html>
+
+<?php session_start()
+?>
+
+
+
+
+
 <?php
-  if(isset($_POST['submit'])){
-  
-    //Get image name
-  
-    $var1 = $_FILES['image']['name'];
-    //Get text
-    $type= $_POST['type'];
-    $description= $_POST['description'];
-    $datetime= $_POST['datetime'];
-    $senderid= $_POST['senderid'];
-    $price= $_POST['price'];
-    $latitude= $_POST['latitude'];
-    $longitude= $_POST['longitude'];
-    echo $description,$price;
- 
-  //image file directory
-  
-    $move=move_uploaded_file($_FILES["image"]["tmp_name"],"uploads/". $_FILES["image"]["name"]);			
-  
-    
-    include 'dbconnect.php'; 
-    //insert query
-  
+
+$senderid=1;
+
+
+
    
+
+
+
+
+
+include 'dbconnect.php';
+if($con === false){
+	
+  die("ERROR: Could not connect. " . mysqli_connect_error());
+}
+
+
+if (isset($_POST['submit'])) {
+  // do logic
+  $latitude= $_POST['latitude'];
+  $longitude= $_POST['longitude'];
+  $type= $_POST['type'];
+  $description= $_POST['description'];
+  $datetime= $_POST['datetime'];
+  $price= $_POST['price'];
+  $image = $_FILES['image']['name']; 
   
-    $sql = "INSERT INTO product(`type`, `description`, `latitude`, `longitude`, `datetime`, `senderid`, `price`, `image`) values ('$type','$description','$latitude','$longitude','$datetime','$senderid','$price','$var')";
-    //excute query
+
+
+  $move=move_uploaded_file($_FILES["image"]["tmp_name"],"uploads/". $_FILES["image"]["name"]);	
+
+   
+    
+  $sql = "INSERT INTO product(latitude,longitude,price,datetime,type,description,image) values ('$latitude','$longitude','$price','$datetime','$type','$description','$senderid','$image')";
   
     
-    mysqli_query($db,$sql);
+  //excute query
+
   
-    
-    if($move)
+  mysqli_query($con,$sql);
+
+
+
+ echo 
+"latitude:$latitude,longitude:$longitude,type:$type,description:$description,datetime:$datetime,price:$price";  
+
   
-    
-    {
+
+
+
+
+  echo"all set";
   
-    
-      echo " successfully uploaded";
-  
-    
-    }else{
-  
-    
-      echo "Failed to upload";
-  
-    
-    }
-  
-    
-  }
-  
+
+
+  //Get text
+
+
+
+
+}
+ 
 
 ?>
 
 
 
-
-<?php
-
-mysqli_close($con);
-
-
-
-?>
+</html>

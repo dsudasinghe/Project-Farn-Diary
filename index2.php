@@ -316,7 +316,12 @@
 </div>
 <!--End latest section-->
 
+<div>
 
+
+<?php include 'mapgo.php'; ?>
+
+</div>
 
 <!--Start contact section-->
 <div id="contact" class="offset">
