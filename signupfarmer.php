@@ -7,6 +7,7 @@
 <link href="css/sty1.css" rel="stylesheet" type="text/css" >
 <!-- bootstrap -->
 <link rel="stylesheet" href="bootstrap-4.1.3-dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
 <!-- added styles from home page
 <link rel="stylesheet" href="style.css">
@@ -100,15 +101,13 @@
 
 
 
-
-
     <div class="login-box" style="height: auto;">
 
 
 <div class="container">
 <div class="row">
 <div class="div2">
-        <form action="signup.php" method="POST" enctype="multipart/form-data">
+        <form action="signupfarmer.php" method="POST" enctype="multipart/form-data">
         <h1>Sign up</h1>
 
      <input type="text" name="nicnum" placeholder="Enter nic number">
