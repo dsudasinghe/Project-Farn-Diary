@@ -31,7 +31,11 @@ if (isset($_POST['submit'])) {
   $description= $_POST['description'];
   $datetime= $_POST['datetime'];
   $price= $_POST['price'];
+<<<<<<< HEAD
   //$image = $_FILES['image']['name']; 
+=======
+ // $image = $_FILES['image']['name']; 
+>>>>>>> 9bf18cc26cfa8565d6cf488b20678fa1dcf93089
   
 
 
@@ -39,7 +43,11 @@ if (isset($_POST['submit'])) {
 
    
     
+<<<<<<< HEAD
   $sql = "INSERT INTO product(latitude,longitude,price,datetime,type,description) values ('$latitude','$longitude','$price','$datetime','$type','$description','$senderid')";
+=======
+  $sql = "INSERT INTO product(latitude,longitude,price,`datetime`,`type`,`description`,senderid) values ('$latitude','$longitude','$price','$datetime','$type','$description','$senderid')";
+>>>>>>> 9bf18cc26cfa8565d6cf488b20678fa1dcf93089
   
     
   //excute query

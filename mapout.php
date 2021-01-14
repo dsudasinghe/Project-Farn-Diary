@@ -24,9 +24,10 @@
 
 
 
-
+<!-- common navigation -->
 <?php include 'navcommon.php'; ?>
 
+<!-- common db connection -->
 <?php include 'dbconnect.php'; ?>
 
 
@@ -193,7 +194,7 @@ if (mysqli_num_rows($result) > 0)
   <td style="padding-bottom:20%;">
 
 
-  <a href="index2.php?pid=<?php echo $myPhpVar ?>"> <img style="width:30px;" src="images/flag.png" ></a> </br></br></br></br></br>
+  <a href="setflag.php?pid=<?php echo $myPhpVar ?>"> <img style="width:30px;" src="images/flag.png" ></a> </br></br></br></br></br>
 
   <a  class="btn btn-danger" href="deleteproduct.php?pid=<?php echo $myPhpVar ?>">delete</a>
 

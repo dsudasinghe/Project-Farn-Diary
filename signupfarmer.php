@@ -148,12 +148,18 @@
 
 
 
+<?php
+  function check_string($my_string){
+   $regex = preg_match('[@_!#$%^&*()<>?/|}{~:]', $my_string);
+   if($regex)
+      print("String has been accepted");
+   else
+      print("String has not been accepted");
+}
 
 
 
-
-
-
+?>
 
 
 
